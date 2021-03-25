@@ -1,0 +1,199 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(#154c4d, #092c2d);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin: 0;
+}
+
+input#search-text-input {
+  background-color: #ffffdf;
+  font-family: "Amatic SC", cursive;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 44px;
+  position: inherit;
+  right: 120px;
+  width: 80%;
+}
+
+small {
+  color: #337ab7;
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+}
+
+span {
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+  border-radius: 100%;
+  color: #ffffdf;
+  display: inline-block;
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 8px 4px;
+}
+
+a {
+  color: #ffffdf;
+  text-decoration: none;
+}
+
+.container {
+  border: 5px solid rgba(255, 255, 223, 0.5);
+  border-radius: 10px;
+  margin-top: 50px;
+  max-width: 768px;
+  padding: 20px;
+}
+
+#header {
+  color: #3a718c;
+  font-family: "Amatic SC", cursive;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: left;
+}
+
+.card {
+  background-color: transparent;
+  border: 2px solid #ffffdf;
+  border-radius: 5px;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+}
+
+.card,
+day {
+  color: #5ea3a6;
+}
+
+.fa-sun {
+  color: #fad2a8;
+  font-size: 30px;
+}
+
+.fa-cloud-sun {
+  color: #fdfdcf;
+  font-size: 30px;
+}
+
+.fa-cloud {
+  color: #bdbdbd;
+  font-size: 30px;
+}
+
+#future {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: #3a718c;
+  font-family: "Amatic SC", cursive;
+  font-size: 32px;
+  font-weight: 900;
+  margin: auto;
+}
+
+.img-responsive {
+  border-radius: 100%;
+  display: block;
+  height: 200px;
+  margin: 10px auto;
+  width: 200px;
+}
+
+.box {
+  display: contents;
+  position: relative;
+}
+
+.img-title {
+  color: #ffffdf;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 30%;
+}
+
+.currently {
+  color: #ffffdf;
+  line-height: 1;
+}
+
+#description {
+  margin-top: 10px;
+}
+
+#today {
+  color: #3a718c;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+#currentForecastParagraph {
+  color: #5ea3a6;
+  line-height: 1.5;
+}
+
+a.units {
+  color: #ffffdf !important;
+}
+
+#city-search {
+  text-align: right;
+}
+
+.btn-secondary {
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 9px 18px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#current-location-button {
+  background-color: #ffffdf;
+  color: #6c757d;
+}
+#search-button {
+  background-color: #6c757d;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #ffffdf;
+  display: inline-block;
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 9px 18px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#current-location-button:hover {
+  background: #ffffc0;
+}
+#search-button:hover {
+  background: #5c636b;
+}
+
+#city-state {
+  font-size: 44px;
+  padding-top: 10px;
+}
+
+#location-paragraph {
+  color: #5ea3a6;
+  line-height: 1.5;
+  margin-top: 10px;
+}
