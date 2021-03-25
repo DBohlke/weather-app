@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireframe to HTML/CSS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Fredericka+the+Great&display=swap");
+    </style>
+
+    <script
+      src="https://kit.fontawesome.com/051c9c4014.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" id="header">
+        <div class="card-body">5 Day Forecast</div>
+      </div>
+      <div class="card-group" id="future-conditions">
+        <div class="card" id="day-1">
+          <div class="card-body">
+            <h5 class="card-title">Tuesday</h5>
+            <p class="card-text">
+              <i class="fas fa-cloud"></i>
+              <br />
+              H: 43° L: 30°
+            </p>
+          </div>
+        </div>
+        <div class="card" id="day-2">
+          <div class="card-body">
+            <h5 class="card-title">Wednesday</h5>
+            <p class="card-text">
+              <i class="fas fa-cloud-sun"></i>
+              <br />
+              H: 34° L: 41°
+            </p>
+          </div>
+        </div>
+        <div class="card" id="day-3">
+          <div class="card-body">
+            <h5 class="card-title">Thursday</h5>
+            <p class="card-text">
+              <i class="fas fa-cloud-sun"></i>
+              <br />
+              H: 30° L: 21°
+            </p>
+          </div>
+        </div>
+        <div class="card" id="day-4">
+          <div class="card-body">
+            <h5 class="card-title">Friday</h5>
+            <p class="card-text">
+              <i class="fas fa-cloud-sun"></i>
+              <br />
+              H: 36° L: 30°
+            </p>
+          </div>
+        </div>
+        <div class="card" id="day-5">
+          <div class="card-body">
+            <h5 class="card-title">Saturday</h5>
+            <p class="card-text">
+              <i class="fas fa-sun"></i>
+              <br />
+              H: 36° L: 21°
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-group" id="current-conditions">
+        <div class="card" id="current-forecast">
+          <div class="box">
+            <img
+              class="img-responsive"
+              src="https://www.rehab-first.com/wp-content/uploads/2019/06/iStock-993738504-1170x781.jpg"
+              alt="Yellow Sun in Orange Sky"
+            />
+            <div class="img-title">
+              <h2 class="currently" id="temperature"></h2>
+              <h3 id="description"></h3>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title" id="today">Today</h5>
+            <p class="currentForecastParagraph">
+              H: 27° L: 25°
+              <span class="units" id="units">
+                <a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+              <br />
+              Feels like 21° | Chance of Snow 10%
+            </p>
+          </div>
+        </div>
+        <div class="card" id="city-search">
+          <div class="card-body">
+            <form id="search-input">
+              <input
+                type="text"
+                placeholder="Enter City"
+                autocomplete="off"
+                autofocus="on"
+                id="search-text-input"
+              />
+              <input type="submit" value="Search" id="search-button" />
+            </form>
+            <a href="#" class="btn btn-secondary" id="current-location-button"
+              >Current Location</a
+            >
+            <h5 class="card-title" id="city-state">Location</h5>
+            <p class="card-text" id="location-paragraph">
+              <text id="date"></text><br />
+              <text id="time"></text><br />
+              Sunrise 6:56AM | Sunset 5:50PM
+            </p>
+            <br />
+            <small>
+              <a href="https://weather.com/">Get Extended Forecast</a>
+            </small>
+          </div>
+        </div>
+      </div>
+      <small> 🐱 Coded by Dani Bohlke</small>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
