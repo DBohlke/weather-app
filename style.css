@@ -48,6 +48,7 @@ a {
   background-repeat: no-repeat;
   border: 5px solid rgba(255, 255, 223, 0.5);
   border-radius: 10px;
+  box-shadow: -11px 11px 11px 1px rgb(92 99 107 / 40%);
   margin-top: 50px;
   max-width: 768px;
   padding: 20px;
