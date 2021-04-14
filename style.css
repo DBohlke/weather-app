@@ -10,13 +10,14 @@ body {
 
 input#search-text-input {
   background-color: #ffffdf;
+  border-radius: 6px;
   font-family: "Amatic SC", cursive;
   font-size: 24px;
   font-weight: 900;
   line-height: 44px;
   position: inherit;
   right: 120px;
-  width: 80%;
+  width: 75%;
 }
 
 small {
@@ -130,6 +131,7 @@ day {
   color: #3a718c;
   font-size: 44px;
   font-weight: 900;
+  margin-top: -10px;
 }
 
 #currentForecastParagraph {
@@ -158,6 +160,7 @@ a.units {
   background-color: #ffffdf;
   color: #6c757d;
 }
+
 #search-button {
   background-color: #6c757d;
   border: 1px solid transparent;
