@@ -7,6 +7,8 @@ function showWeather(response) {
     Math.round(response.data.main.temp) + "°C";
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#wind").innerHTML =
+    "Wind" + Math.round(response.data.wind.speed);
 }
 
 function searchCity(city) {

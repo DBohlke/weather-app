@@ -25,18 +25,6 @@ small {
   font-size: 20px;
 }
 
-span {
-  background-color: #6c757d;
-  border: 1px solid #6c757d;
-  border-radius: 100%;
-  color: #ffffdf;
-  display: inline-block;
-  font-family: "Amatic SC", cursive;
-  font-size: 20px;
-  font-weight: 900;
-  padding: 8px 4px;
-}
-
 a {
   color: #ffffdf;
   text-decoration: none;
@@ -140,7 +128,7 @@ day {
 
 #today {
   color: #3a718c;
-  font-size: 38px;
+  font-size: 44px;
   font-weight: 900;
 }
 
