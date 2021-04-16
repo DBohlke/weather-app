@@ -9,6 +9,8 @@ function showWeather(response) {
     response.data.weather[0].main;
   document.querySelector("#wind").innerHTML =
     "Wind: " + Math.round(response.data.wind.speed / 1.609) + "mph";
+  document.querySelector("#real-feel").innerHTML =
+    "Feels like: " + Math.round(response.data.main.feels_like) + "°F";
 }
 
 function searchCity(city) {
@@ -75,9 +77,16 @@ let currentMonth = months[now.getMonth()];
 let currentDate = now.getDate();
 let hours = now.getHours();
 let minutes = now.getMinutes();
-let ampm = now.get;
+if(minutes < 10) {
+  minutes = "0" + minutes;
+}
+let ampm = "AM";
+if (hours > 12) {
+  hours -= 12;
+  ampm = "PM";
+}
 
 date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}`;
-time.innerHTML = `${hours}:${minutes}`;
+time.innerHTML = `${hours}:${minutes}${ampm}`;
 
 searchCity("55901");
