@@ -115,11 +115,12 @@ day {
   position: absolute;
   right: 0;
   text-align: center;
-  top: 30%;
+  top: 15%;
 }
 
 .currently {
   color: #ffffdf;
+  font-size: 50px;
   line-height: 1;
 }
 

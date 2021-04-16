@@ -79,3 +79,5 @@ let ampm = now.get;
 
 date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}`;
 time.innerHTML = `${hours}:${minutes}`;
+
+searchCity("55901");
