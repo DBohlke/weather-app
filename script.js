@@ -6,7 +6,7 @@ function showWeather(response) {
   document.querySelector("#temperature").innerHTML =
     Math.round(response.data.main.temp) + "°F";
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector("#wind").innerHTML =
     "Wind: " + Math.round(response.data.wind.speed / 1.609) + "mph";
   document.querySelector("#real-feel").innerHTML =
@@ -77,7 +77,7 @@ let currentMonth = months[now.getMonth()];
 let currentDate = now.getDate();
 let hours = now.getHours();
 let minutes = now.getMinutes();
-if(minutes < 10) {
+if (minutes < 10) {
   minutes = "0" + minutes;
 }
 let ampm = "AM";
