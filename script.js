@@ -8,7 +8,7 @@ function showWeather(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#wind").innerHTML =
-    "Wind: " + Math.round(response.data.wind.speed / 1.609) + "mph";
+    "Wind: " + Math.round(response.data.wind.speed) + "mph";
   document.querySelector("#real-feel").innerHTML =
     "Feels like: " + Math.round(response.data.main.feels_like) + "°F";
 }
@@ -34,7 +34,7 @@ function searchPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "18646baba3751e0ddacc065cb85e47a6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showWeather);
 }
@@ -80,10 +80,10 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = "0" + minutes;
 }
-let ampm = "AM";
+let ampm = "am";
 if (hours > 12) {
   hours -= 12;
-  ampm = "PM";
+  ampm = "am";
 }
 
 date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}`;
