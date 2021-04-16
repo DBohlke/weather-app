@@ -4,16 +4,16 @@ form.addEventListener("submit", handleSubmit);
 function showWeather(response) {
   document.querySelector("#city-state").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML =
-    Math.round(response.data.main.temp) + "°C";
+    Math.round(response.data.main.temp) + "°F";
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#wind").innerHTML =
-    "Wind " + Math.round(response.data.wind.speed) + "km/h";
+    "Wind: " + Math.round(response.data.wind.speed / 1.609) + "mph";
 }
 
 function searchCity(city) {
   let myApiKey = "18646baba3751e0ddacc065cb85e47a6";
-  let myApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myApiKey}&units=metric`;
+  let myApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myApiKey}&units=imperial`;
   axios.get(myApiUrl).then(showWeather);
 }
 
