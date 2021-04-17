@@ -7,6 +7,10 @@ function showWeather(response) {
     Math.round(response.data.main.temp) + "°F";
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#max-temp").innerHTML =
+    Math.round(response.data.main.temp_max) + "°F";
+    document.querySelector("#min-temp").innerHTML =
+      Math.round(response.data.main.temp_min) + "°F";
   document.querySelector("#wind").innerHTML =
     "Wind: " + Math.round(response.data.wind.speed) + "mph";
   document.querySelector("#real-feel").innerHTML =
