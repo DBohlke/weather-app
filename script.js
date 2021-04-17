@@ -2,6 +2,7 @@ let form = document.querySelector("#search-input");
 form.addEventListener("submit", handleSubmit);
 
 function showWeather(response) {
+  console.log(response.data);
   document.querySelector("#city-state").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML =
     Math.round(response.data.main.temp) + "°F";
@@ -9,12 +10,20 @@ function showWeather(response) {
     response.data.weather[0].description;
   document.querySelector("#max-temp").innerHTML =
     Math.round(response.data.main.temp_max) + "°F";
-    document.querySelector("#min-temp").innerHTML =
-      Math.round(response.data.main.temp_min) + "°F";
+  document.querySelector("#min-temp").innerHTML =
+    Math.round(response.data.main.temp_min) + "°F";
   document.querySelector("#wind").innerHTML =
     "Wind: " + Math.round(response.data.wind.speed) + "mph";
   document.querySelector("#real-feel").innerHTML =
     "Feels like: " + Math.round(response.data.main.feels_like) + "°F";
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
