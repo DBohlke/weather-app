@@ -24,6 +24,7 @@ small {
   color: #337ab7;
   font-family: "Amatic SC", cursive;
   font-size: 20px;
+  
 }
 
 a {
@@ -118,6 +119,18 @@ day {
   top: 15%;
 }
 
+#unit-link{
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+  border-radius: 100%;
+  color: #ffffdf;
+  display: inline-block;
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 8px 4px;
+}
+
 .currently {
   color: #ffffdf;
   font-size: 50px;
@@ -141,12 +154,8 @@ day {
   line-height: 1.5;
 }
 
-a.units {
-  color: #ffffdf !important;
-}
-
 #city-search {
-  text-align: right;
+  text-align: center;
 }
 
 .btn-secondary {
@@ -185,7 +194,7 @@ a.units {
 }
 
 #city-state {
-  font-size: 44px;
+  font-size: 60px;
   padding-top: 10px;
 }
 
