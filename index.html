@@ -44,17 +44,20 @@
               alt="Clear"
             />
             <div class="img-title">
-              <h2 class="currently" id="temperature"></h2>
+              <text class="currently" id="temperature"></text>
+              <span id="unit">°F</span>
               <h3 id="description"></h3>
             </div>
           </div>
           <div class="card-body">
             <h5 class="card-title" id="today">Today</h5>
             <p class="currentForecastParagraph">
-              H: <span id="max-temp"></span> L: <span id="min-temp"></span>
-              <a href="#" id="unit-link"> °C </a><br />
-              <text id="wind"></text> |
-              <text id="real-feel">Feels like: </text>
+              H: <span id="max-temp"></span><span id="max-unit">°F</span> L:
+              <span id="min-temp"></span><span id="min-unit">°F</span>
+              <a href="#" id="unit-convert"><span id="unit-link">°C</span></a
+              ><br />
+              <text id="wind"></text> | <text id="real-feel">Feels like: </text
+              ><span id="real-feel-unit">°F</span>
             </p>
           </div>
         </div>
