@@ -2,6 +2,7 @@ let form = document.querySelector("#search-input");
 form.addEventListener("submit", handleSubmit);
 
 function showWeather(response) {
+  console.log(response.data);
   document.querySelector("#city-state").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -26,6 +27,11 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  temperatureInFahrenheit = response.data.main.temp;
+  maxInFahrenheit = response.data.main.temp_max;
+  minInFahrenheit = response.data.main.temp_min;
+  realFeelFahrenheit = response.data.main.feels_like;
 }
 
 function searchCity(city) {
@@ -105,22 +111,11 @@ date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}`;
 time.innerHTML = `${hours}:${minutes}${ampm}`;
 
 let temperatureInFahrenheit = null;
-let temperatureInCelsius = null;
 
-let maxInFahrenheit = [];
-let minInFahrenheit = [];
-
-let maxInCelsius = [];
-let minInCelsius = [];
+let maxInFahrenheit = null;
+let minInFahrenheit = null;
 
 let realFeelFahrenheit = null;
-let realFeelCelsius = null;
-
-let maxTemperatureElement = "";
-let minTemperatureElement = "";
-
-let maxUnitElement = "";
-let minUnitElement = "";
 
 function changeUnit(event) {
   event.preventDefault();
@@ -142,10 +137,6 @@ function changeUnit(event) {
     let unitConvertElement = document.querySelector("#unit-link");
     let realFeelUnitElement = document.querySelector("#real-feel-unit");
 
-    temperatureInCelcius = celsiusTemperature;
-    maxInCelsius = maxTemperature;
-    minInCelsius = minTemperature;
-    realFeelCelsius = realFeelTemperature;
     celsiusTemperatureElement.innerHTML = celsiusTemperature;
     maxTemperatureElement.innerHTML = maxTemperature;
     minTemperatureElement.innerHTML = minTemperature;
@@ -157,36 +148,35 @@ function changeUnit(event) {
     unitConvertElement.innerHTML = "°F";
     realFeelUnitElement.innerHTML = "°C";
 
-  }else{
+  } else {
 
-        let fahrenheitTemperature = Math.round(
-          ((temperatureInCelcius * 9) / 5) + 32
-        );
-        let fahrenheitTemperatureElement = document.querySelector("#temperature");
-        let maxTemperature = Math.round(((maxInCelsius * 9) / 5) + 32);
-        let maxTemperatureElement = document.querySelector("#max-temp");
-        let minTemperature = Math.round(((minInCelsius * 9) / 5) + 32);
-        let minTemperatureElement = document.querySelector("#min-temp");
-        let realFeelTemperature = Math.round(((realFeelCelsius * 9) / 5) + 32);
-        let realFeelTemperatureElement = document.querySelector("#real-feel");
-        let unitElement = document.querySelector("#unit");
-        let maxUnitElement = document.querySelector("#max-unit");
-        let minUnitElement = document.querySelector("#min-unit");
-        let unitConvertElement = document.querySelector("#unit-link");
-        let realFeelUnitElement = document.querySelector("#real-feel-unit");
+    let fahrenheitTemperature = Math.round(temperatureInFahrenheit);
+    let fahrenheitTemperatureElement = document.querySelector("#temperature");
+    let maxTemperature = Math.round(maxInFahrenheit);
+    let maxTemperatureElement = document.querySelector("#max-temp");
+    let minTemperature = Math.round(minInFahrenheit);
+    let minTemperatureElement = document.querySelector("#min-temp");
+    let realFeelTemperature = Math.round(realFeelFahrenheit);
+    let realFeelTemperatureElement = document.querySelector("#real-feel");
+    let unitElement = document.querySelector("#unit");
+    let maxUnitElement = document.querySelector("#max-unit");
+    let minUnitElement = document.querySelector("#min-unit");
+    let unitConvertElement = document.querySelector("#unit-link");
+    let realFeelUnitElement = document.querySelector("#real-feel-unit");
 
-        fahrenheitTemperatureElement.innerHTML = fahrenheitTemperature;
-        maxTemperatureElement.innerHTML = maxTemperature;
-        minTemperatureElement.innerHTML = minTemperature;
-        realFeelTemperatureElement.innerHTML = realFeelTemperature;
+    fahrenheitTemperatureElement.innerHTML = fahrenheitTemperature;
+    maxTemperatureElement.innerHTML = maxTemperature;
+    minTemperatureElement.innerHTML = minTemperature;
+    realFeelTemperatureElement.innerHTML = realFeelTemperature;
 
-        unitElement.innerHTML = "°F";
-        maxUnitElement.innerHTML = "°F";
-        minUnitElement.innerHTML = "°F";
-        unitConvertElement.innerHTML = "°C";
-        realFeelUnitElement.innerHTML = "°F";
+    unitElement.innerHTML = "°F";
+    maxUnitElement.innerHTML = "°F";
+    minUnitElement.innerHTML = "°F";
+    unitConvertElement.innerHTML = "°C";
+    realFeelUnitElement.innerHTML = "°F";
   }
 }
+
 
 let unitElement = document.querySelector("#unit-convert");
 unitElement.addEventListener("click", changeUnit);
