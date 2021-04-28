@@ -2,7 +2,6 @@ let form = document.querySelector("#search-input");
 form.addEventListener("submit", handleSubmit);
 
 function showWeather(response) {
-  console.log(response.data);
   document.querySelector("#city-state").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -147,9 +146,7 @@ function changeUnit(event) {
     minUnitElement.innerHTML = "°C";
     unitConvertElement.innerHTML = "°F";
     realFeelUnitElement.innerHTML = "°C";
-
   } else {
-
     let fahrenheitTemperature = Math.round(temperatureInFahrenheit);
     let fahrenheitTemperatureElement = document.querySelector("#temperature");
     let maxTemperature = Math.round(maxInFahrenheit);
@@ -176,7 +173,6 @@ function changeUnit(event) {
     realFeelUnitElement.innerHTML = "°F";
   }
 }
-
 
 let unitElement = document.querySelector("#unit-convert");
 unitElement.addEventListener("click", changeUnit);
